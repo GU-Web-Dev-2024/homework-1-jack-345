@@ -5,15 +5,39 @@
         <style>
             h1 {
                 color: blue;
+                background-color: lightgray;
             }
         </style>
     </head>
     <body>
-        <h1>HW1 Submission</h1>
+        <h1 id = "HW-Title">HW1 Submission</h1>
         <p>I hope to gain <strong>development experience</strong> from <em>this course</em>.</p>
+        
+        <p>
+            <button id = "redButton">Red</button>
+            <button id = "blueButton">Blue</button>
+        </p>
+
         <img
         src = "lights_were_too_bright.jpg"
         alt = "Jarrett Allen meme" />
         <!--HTML previewer doesn't display the image but loading the html in a browser will-->
+        
+        <script>
+            let redbttn = document.getElementById(redButton);
+            redButton.addEventListener("click", function() {
+                changeTextColor("red");
+            });
+
+            let bluebttn = document.getElementById(blueButton);
+            blueButton.addEventListener("click", function() {
+                changeTextColor("blue");
+            });
+
+            function changeTextColor(newColor) {
+                let heading = document.getElementById("HW-Title");
+                heading.style.color = newColor;
+            }
+        </script>
     </body>
 </html>
